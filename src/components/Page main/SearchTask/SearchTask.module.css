@@ -1,0 +1,68 @@
+.div_container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.field_container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.field_container svg {
+  fill: var(--main-blue);
+  position: absolute;
+  right: 20px;
+}
+.field_container input {
+  position: relative;
+  width: var(--task-form-widht-main1);
+  height: var(--task-form-height-main);
+  font-size: 30px;
+  border: 3px solid var(--main-blue);
+  background-color: var(--main-blue1);
+  border-radius: var(--main-border-radius);
+  transition: 0.3s ease;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: var(--main-black);
+  }
+}
+
+.field_container label {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  font-size: 30px;
+  transition: 0.3s ease;
+  pointer-events: none;
+  color: var(--main-blue);
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -20px;
+  font-size: 20px;
+  color: var(--main-gray);
+}
+
+@media (max-width: 600px) {
+  .field_container input {
+    width: 100%;
+  }
+  .field_container label {
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .form {
+    justify-content: center;
+    width: 350px;
+  }
+  .field_container input {
+    width: 95%;
+  }
+}

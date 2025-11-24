@@ -1,0 +1,36 @@
+.div_info_tasks {
+  display: flex;
+  position: relative;
+  border-bottom: 5px solid var(--main-blue);
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.h1_info {
+  color: var(--main-blue);
+  font-family: var(--main-font);
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+.span_info_total {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 800;
+  color: var(--main-red);
+}
+.span_info_done {
+  margin-left: 5px;
+  font-weight: 800;
+  color: var(--main-red);
+}
+
+@media (max-width: 600px) {
+  .h1_info {
+    font-size: 20px;
+  }
+  .div_info_tasks {
+    flex-direction: column;
+  }
+}

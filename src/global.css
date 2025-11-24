@@ -1,0 +1,22 @@
+:root {
+  --main-gray: #030303;
+  --main-gray1: #5a5a5a;
+  --main-black: black;
+  --main-red: #ff0000;
+
+  --main-white: white;
+  --main-blue: #2362cc;
+  --main-blue1: #c5e1e5;
+  --main-blue2: #1d1ba3;
+
+  --main-font: "Shadows Into Light", cursive;
+  --new-roman-main: "Times New Roman", Times, serif;
+
+  --p-font-size: 10px;
+
+  --main-border-radius: 10px;
+
+  --task-form-widht-main: 400px;
+  --task-form-widht-main1: 485px;
+  --task-form-height-main: 50px;
+}

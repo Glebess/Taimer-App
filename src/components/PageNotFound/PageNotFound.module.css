@@ -1,0 +1,63 @@
+.div_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--main-font);
+  margin-top: 300px;
+}
+.div_page_not_found {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+
+  text-align: center;
+  font-size: 50px;
+  background-size: cover;
+  background-image: url("./connect_icon.svg");
+  background-position: center;
+  border: 3px solid var(--main-blue2);
+  border-radius: 10px;
+  color: var(--main-gray);
+  background-color: var(--main-blue1);
+  justify-content: center;
+}
+
+.div_page_not_found h1 {
+  z-index: 10;
+  margin-top: 0;
+}
+.div_page_not_found p {
+  z-index: 10;
+  font-size: 45px;
+  font-weight: 900;
+  margin: 0;
+}
+.div_container a {
+  text-decoration: none;
+  border: 3px solid var(--main-blue2);
+  font-size: 30px;
+  margin-top: 30px;
+  background-color: var(--main-blue1);
+  color: var(--main-blue);
+  border-radius: 10px;
+  transition: all 0.3s;
+  width: 200px;
+  text-align: center;
+}
+.div_container a:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 500px) {
+  .div_container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+  }
+  .div_page_not_found {
+    width: 80%;
+  }
+}

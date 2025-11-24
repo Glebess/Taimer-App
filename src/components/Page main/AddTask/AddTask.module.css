@@ -1,0 +1,111 @@
+.div_form_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form {
+  display: flex;
+  margin-top: 30px;
+}
+.field_container {
+  display: flex;
+  position: relative;
+}
+.field_container input {
+  width: 425px;
+  position: relative;
+  height: var(--task-form-height-main);
+  font-size: 30px;
+  border: 3px solid var(--main-blue);
+  border-radius: var(--main-border-radius);
+  transition: 0.3s ease;
+  background-color: var(--main-blue1);
+  box-sizing: border-box;
+
+  &:focus {
+    border: 0;
+  }
+}
+
+.field_container label {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  font-size: 30px;
+  transition: 0.3s ease;
+  pointer-events: none;
+  color: var(--main-blue);
+}
+
+.button_add_task {
+  width: 30%;
+  border: 3px solid var(--main-blue);
+  border-radius: 10px;
+  margin-left: 10px;
+
+  background-color: var(--main-blue);
+  transition: all 0.3s ease;
+  height: 50px;
+  color: var(--main-blue);
+  font-weight: 700;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.button_add_task svg {
+  width: 75%;
+  height: 75%;
+}
+
+.div_maximum_characters {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+.div_maximum_characters_p {
+  color: blue;
+  margin: 0;
+  margin-top: 5px;
+  font-family: var(--main-font);
+  font-weight: 600;
+}
+.p_maximum_characters_max {
+  color: red;
+
+  margin: 0;
+  margin-top: 5px;
+  font-family: var(--main-font);
+  font-weight: 600;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -20px;
+  font-size: 20px;
+  color: var(--main-gray);
+}
+@media (max-width: 600px) {
+  .field_container input {
+    width: 310px;
+  }
+  .field_container label {
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .form {
+    width: 95%;
+  }
+  .field_container label {
+    font-size: 20px;
+  }
+  .button_add_task {
+    width: 60px;
+    margin-left: 0px;
+  }
+  .field_container input {
+    width: 95%;
+  }
+}

@@ -1,0 +1,23 @@
+.div_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.h1_no_tasks {
+  font-size: 50px;
+  color: var(--main-blue);
+  font-family: var(--main-font);
+  margin: 0;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .h1_no_tasks {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .h1_no_tasks {
+    font-size: 20px;
+  }
+}

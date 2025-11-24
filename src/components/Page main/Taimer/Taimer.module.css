@@ -1,0 +1,53 @@
+.taimerContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: var(--main-blue);
+}
+.field_container {
+  display: flex;
+  justify-content: center;
+}
+.taimer_main_div {
+  background-color: white;
+  margin-top: 105px;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 1500px;
+  min-height: 700px;
+  border-radius: 10px;
+  border: 5px solid var(--main-blue2);
+}
+
+.h1Name {
+  top: 50px;
+  position: absolute;
+  color: var(--main-blue2);
+
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  margin: 0;
+  font-size: 40px;
+  height: 50px;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .taimer_main_div {
+    width: 100%;
+  }
+  .h1Name {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .taimer_main_div {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .h1Name {
+    font-size: 30px;
+  }
+}
