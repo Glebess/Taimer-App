@@ -8,7 +8,7 @@ const App = () => {
     <>
       <Header />
 
-      <HashRouter basename="/Taimer-App">
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Taimer />} />
           <Route path="/aboutProject" element={<About />} />
