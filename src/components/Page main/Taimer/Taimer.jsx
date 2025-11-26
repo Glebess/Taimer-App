@@ -12,8 +12,6 @@ const Taimer = () => {
 
   const [textAlertModal, setTextAlertModal] = useState("");
 
-  // const [choiceTaimerSector, setChoiceTaimerSector] = useState("main");
-
   const [tasks, setTasks] = useState([
     {
       title: "Погладить кота",
@@ -35,35 +33,6 @@ const Taimer = () => {
   ]);
 
   const isShowAlert = textAlertModal !== "";
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setTasks((prevTasks) =>
-  //       prevTasks.map((task) => {
-  //         if (task.isRunning && !task.isDone) {
-  //           return { ...task, time: task.time + 1 };
-  //         }
-  //         return task;
-  //       })
-  //     );
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // const handleStartTimer = (id) => {
-  //   setTasks((prevTasks) =>
-  //     prevTasks.map((task) =>
-  //       task.id === id ? { ...task, isRunning: true } : task
-  //     )
-  //   );
-  // };
-  // const handlePauseTimer = (id) => {
-  //   setTasks((prevTasks) =>
-  //     prevTasks.map((task) =>
-  //       task.id === id ? { ...task, isRunning: false } : task
-  //     )
-  //   );
-  // };
 
   return (
     <>

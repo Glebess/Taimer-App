@@ -1,20 +1,29 @@
+import { useState } from "react";
+
 import Button from "../../../componetns-chare/button/Button";
 import styles from "./Item.module.css";
-import { useState } from "react";
 import TaimerItem from "./TaimerItem/TaimerItem";
 
 const Item = (props) => {
-  const {
-    filteredTasks,
-    handleSubmitTask,
-    deleteTask,
-    handleEditTask,
-    isTaskEdit,
-    // taskTitle,
-    setTasks,
-  } = props;
+  const { filteredTasks, handleSubmitTask, deleteTask, setTasks } = props;
 
   const [isHiddenMenuOpen, setIsHiddenMenuOpen] = useState(false);
+
+  const handleIsEditTask = (taskId) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, isEdit: !task.isEdit } : task
+      )
+    );
+  };
+
+  const handleTitleChange = (taskId, newTitle) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, title: newTitle } : task
+      )
+    );
+  };
 
   const handleOpenHiddenMenu = () => {
     setIsHiddenMenuOpen(!isHiddenMenuOpen);
@@ -25,10 +34,10 @@ const Item = (props) => {
       {filteredTasks.map((task) => (
         <div key={task.id} className={styles.div_item_container}>
           <div className={styles.div_item}>
-            {isTaskEdit ? (
-              <h1>{task.title}</h1>
-            ) : (
+            {task.isEdit ? (
               <textarea
+                value={task.title}
+                onChange={(e) => handleTitleChange(task.id, e.target.value)}
                 maxLength={300}
                 className={`${styles.text_area_item} ${
                   task.isDone ? styles.text_area_item_done : ""
@@ -36,6 +45,14 @@ const Item = (props) => {
               >
                 {task.title}
               </textarea>
+            ) : (
+              <h1
+                className={`${styles.text_area_item} ${
+                  task.isDone ? styles.text_area_item_done : ""
+                }`}
+              >
+                {task.title}
+              </h1>
             )}
 
             <div className={styles.div_botton_panel}>
@@ -83,7 +100,7 @@ const Item = (props) => {
                 />
                 <Button
                   className={styles.button_menu_task}
-                  onClick={() => handleEditTask(task.id)}
+                  onClick={() => handleIsEditTask(task.id)}
                   children={
                     <svg
                       width="75%"
@@ -94,11 +111,11 @@ const Item = (props) => {
                     >
                       <path
                         d="M7 17.013L11.413 16.998L21.045 7.458C21.423 7.08 21.631 6.578 21.631 6.044C21.631 5.51 21.423 5.008 21.045 4.63L19.459 3.044C18.703 2.288 17.384 2.292 16.634 3.041L7 12.583V17.013ZM18.045 4.458L19.634 6.041L18.037 7.623L16.451 6.038L18.045 4.458ZM9 13.417L15.03 7.444L16.616 9.03L10.587 15.001L9 15.006V13.417Z"
-                        fill={task.isEdit ? "black" : "white"}
+                        fill={task.isEdit ? "red" : "white"}
                       />
                       <path
                         d="M5 21H19C20.103 21 21 20.103 21 19V10.332L19 12.332V19H8.158C8.132 19 8.105 19.01 8.079 19.01C8.046 19.01 8.013 19.001 7.979 19H5V5H11.847L13.847 3H5C3.897 3 3 3.897 3 5V19C3 20.103 3.897 21 5 21Z"
-                        fill={task.isEdit ? "black" : "white"}
+                        fill={task.isEdit ? "red" : "white"}
                       />
                     </svg>
                   }

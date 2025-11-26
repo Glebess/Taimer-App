@@ -1,6 +1,6 @@
 import Item from "../Item/Item";
 import styles from "./ListItem.module.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 const ListItem = (props) => {
   const {
@@ -11,8 +11,6 @@ const ListItem = (props) => {
     handlePauseTimer,
     search,
   } = props;
-
-  const [taskTitle, setTaskTitle] = useState("");
 
   const filteredTasks = tasks.filter((task) =>
     task.title.toLowerCase().includes(search.toLowerCase())
@@ -25,12 +23,6 @@ const ListItem = (props) => {
       )
     );
   };
-
-  // const handleTaskTitle = (e) => {
-  //   setTaskTitle(e.target.value);
-  // };
-
-  const isHandleEditTask = () => {};
 
   const deleteTask = (deleteId) => {
     setTasks(tasks.filter((task) => task.id != deleteId));
@@ -55,14 +47,12 @@ const ListItem = (props) => {
     } else {
       return (
         <Item
-          taskTitle={taskTitle}
           filteredTasks={filteredTasks}
           deleteTask={deleteTask}
           handleSubmitTask={handleSubmitTask}
           handlePauseTimer={handlePauseTimer}
           handleStartTimer={handleStartTimer}
           setTasks={setTasks}
-          handleEditTask={isHandleEditTask}
         />
       );
     }
