@@ -147,24 +147,6 @@
 .button_menu_task:hover svg path {
   fill: var(--main-blue);
 }
-.button_menu_task_hidden {
-  display: none;
-  border: 0;
-  background-color: var(--main-blue);
-  height: 50px;
-  width: 50px;
-  border-radius: 10px;
-  transition: all 0.2s;
-}
-.button_menu_task_hidden svg {
-  fill: var(--main-white);
-  width: 100%;
-  height: 90%;
-}
-
-.button_menu_task_hidden path {
-  fill: var(--main-white);
-}
 @keyframes appearance_div {
   0% {
     transform: scale(0, 0.025);
@@ -174,11 +156,6 @@
   }
 }
 @media (max-width: 600px) {
-  .button_menu_task_hidden {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   .button_menu_task {
     display: none;
   }

@@ -20,6 +20,7 @@ const Taimer = () => {
       time: 0,
       isRunning: false,
       isEdit: false,
+      isHiddenMenuOpen: false,
     },
     {
       title:
@@ -29,6 +30,7 @@ const Taimer = () => {
       time: 0,
       isRunning: false,
       isEdit: false,
+      isHiddenMenuOpen: false,
     },
   ]);
 

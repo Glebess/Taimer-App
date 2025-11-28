@@ -3,6 +3,12 @@ import styles from "./TaskInfo.module.css";
 
 const TaskInfo = (props) => {
   const { tasks, setTasks, setTextAlertModal } = props;
+
+  const tasksCompleted = tasks.filter((task) => task.isDone).length;
+
+  const tasksProgressBar = (tasksCompleted / tasks.length) * 100;
+  console.log(tasks.length);
+
   const isTaskHave = tasks.length > 0;
 
   const handleDeleleAllTasks = () => {
@@ -11,18 +17,27 @@ const TaskInfo = (props) => {
       setTasks([]);
     }
   };
+
   return (
     <div className={styles.div_info_tasks}>
       <div>
         {isTaskHave ? (
-          <h1 className={styles.h1_info}>
-            Выполнено
-            <span className={styles.span_info_total}>
-              {tasks.filter((task) => task.isDone).length}
-            </span>
-            задач из
-            <span className={styles.span_info_done}>{tasks.length}</span>
-          </h1>
+          <div>
+            <h1 className={styles.h1_info}>
+              Выполнено
+              <span className={styles.span_info_total}>{tasksCompleted}</span>
+              задач из
+              <span className={styles.span_info_done}>{tasks.length}</span>
+            </h1>
+            <div className={styles.div_tab_task_completed}>
+              <div
+                className={styles.div_fill_scale}
+                style={{
+                  "--progress-width": `${tasksProgressBar}%`,
+                }}
+              ></div>
+            </div>
+          </div>
         ) : (
           <h1 className={styles.h1_info}>Список задач пуст</h1>
         )}

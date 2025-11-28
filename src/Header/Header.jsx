@@ -30,11 +30,11 @@ const Header = () => {
             </div>
             <ul className={styles.ul_navigation}>
               <li>
-                <a href="/aboutProject">О проекте</a>
+                <a href="/Taimer-App/aboutProject">О проекте</a>
               </li>
 
               <li>
-                <a href="/">Главная</a>
+                <a href="/Taimer-App">Главная</a>
               </li>
 
               <li>

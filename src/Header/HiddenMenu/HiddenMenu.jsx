@@ -35,7 +35,7 @@ const HiddenMenu = (props) => {
         </li>
 
         <li>
-          <a href="/aboutProject">О проекте</a>
+          <a href="/Taimer-App/aboutProject">О проекте</a>
         </li>
         <li>
           <a href="/">Тема</a>

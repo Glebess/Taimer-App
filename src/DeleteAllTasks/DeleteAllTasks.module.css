@@ -3,10 +3,12 @@
   box-sizing: border-box;
   position: absolute;
   right: 10px;
+  bottom: 10px;
 }
 .button_delete_all_task {
   font-size: 20px;
   right: 10px;
+
   font-family: var(--main-font);
   border: 3px solid var(--main-blue);
   border-radius: var(--main-border-radius);
