@@ -1,5 +1,4 @@
 .div_items_hidden_menu {
-  z-index: 9999;
   position: relative;
   display: flex;
 }

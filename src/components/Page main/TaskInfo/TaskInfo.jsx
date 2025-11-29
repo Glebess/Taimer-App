@@ -7,7 +7,6 @@ const TaskInfo = (props) => {
   const tasksCompleted = tasks.filter((task) => task.isDone).length;
 
   const tasksProgressBar = (tasksCompleted / tasks.length) * 100;
-  console.log(tasks.length);
 
   const isTaskHave = tasks.length > 0;
 

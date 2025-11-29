@@ -23,7 +23,6 @@ const TaimerItem = (props) => {
       setTasks((prevTasks) =>
         prevTasks.map((task) => {
           if (task.isRunning && !task.isDone) {
-            console.log(1);
             return { ...task, time: task.time + 1 };
           }
           return task;
